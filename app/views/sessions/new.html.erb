@@ -2,12 +2,12 @@
 <%= form_with(url: session_path, local: true) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, value: params[:email] %>
+    <%= f.email_field :email, value: params[:email], id: 'user_name' %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password, id: 'user_password' %>
   </div>
 
   <div class="actions">
