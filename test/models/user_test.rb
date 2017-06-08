@@ -12,4 +12,11 @@ class UserTest < ActiveSupport::TestCase
     user = users(:jane)
     assert_equal user.name, user.display_name
   end
+  
+  test 'validates password' do
+    user = User.new(password: '111')
+    assert_not user.valid?
+    assert_equal [:password], user.errors.keys
+    # errors = hash ; keys = array with all keys
+  end 
 end
