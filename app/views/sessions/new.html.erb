@@ -1,13 +1,15 @@
 <h1>Log In</h1>
 <%= form_with(url: session_path, local: true) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, value: params[:email] %>
+    <!-- An id is added -->
+    <%= f.label :email, for: 'user_email' %><br />
+    <%= f.email_field :email, value: params[:email], id: 'user_email' %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
+    <!-- An id is added -->
+    <%= f.label :password, for: 'user_password' %><br />
+    <%= f.password_field :password, id: 'user_password' %>
   </div>
 
   <div class="actions">

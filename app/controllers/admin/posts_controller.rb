@@ -42,7 +42,8 @@ class Admin::PostsController < AdminController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to [:admin, @post], notice: 'Post was successfully updated.' }
+        format.html { redirect_to admin_posts_url, notice: 'Post was successfully updated.' }
+        # Change redirection path once the values are send
         format.json { render :show, status: :ok, location: [:admin, @post] }
       else
         format.html { render :edit }
